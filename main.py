@@ -20,13 +20,12 @@ func_conf=["none","none","none","none","none","none","none","none"]
 func_conf=func_conf+["none","none","none","none","none","none","none","none"]
 func_conf=func_conf+["none","none","none","none","none","none","none","none"]
 func_conf=func_conf+["none","none","none","none","none","none","none","none"]
-func_conf=func_conf+["*2","/2","none","none","none","none","none","none"]
+func_conf=func_conf+["w","q","n","none","none","none","none","none"]
 
 ui_but=["40","41","42","43","44","45","46","47","52","53","54","55","56","51","5b","5d"]
-ui_func=[]
-
+ui_func=["none","none","none","none","none","none","none","none","none","none","none","none","none","none","space","none"]
 A=list(zip(itertools.repeat("default"),apc_array,color_array,func_conf))#[LED_Mode,Button,colors,functions]
-B=list(zip(itertools.repeat("none"),ui_but))
+B=list(zip(ui_func,ui_but))
 
 
 def init():# A[led,button,color]
@@ -65,8 +64,8 @@ with open("test.log", "w") as f:
             if str(cur).split(" ")[1].lower() in ui_but:
                 cur_input=str(cur).split(" ")[1].lower()
                 B[ui_but.index(cur_input)][0]
-                #subprocess.run(["xdotool","key",str(B[ui_but.index(cur_input)][0])])
-                subprocess.run(["echo",str(B[ui_but.index(cur_input)][0])])
+                subprocess.run(["xdotool","key",str(B[ui_but.index(cur_input)][0])])
+                subprocess.run(["echo",str(B[ui_but.index(cur_input)])])
 
             else:
                 cur_input=str(cur).split(" ")[1].lower()
