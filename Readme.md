@@ -14,17 +14,18 @@
 2. `git clone https://github.com/SyndraLover/Akai-APC-Key-25-mk2-Midi-for-Musescore.git`
 3. `cd Akai-APC-Key-25-mk2-Midi-for-Musescore`
 4. `amidi -l`
-    - Find IO  hw:x,y,z  APC Key 25 mk2 Control
+    - Find `IO  hw:x,y,z  APC Key 25 mk2 Control`
     - change hw_midi=hw:x,y,z in main.py
 5. change key_func in main.py for your Desktop (wtype for Wayland/ xdotool for Xorg)
 6. `python main.py`
     - `python3 main.py`
     - `uv run main.py`
 7. Launch Musescore4
+8. Enable midi Input and change keybindings to mapped keys in main.py
 
 ## Customization
-    - change bindings in main.py
-    - change colors in main.py
+- change bindings in main.py
+- change colors in main.py
 
 ## Roadmap
 - key.conf in seperate file
