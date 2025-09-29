@@ -3,8 +3,7 @@
 - Musescore3 only with jackctl for Midi assignment
 
 ## Dependencies
-- wtype (wayland)
-- xdotool (xorg)
+- xdotool (Recommended) or wtype
 - python3
 - amidi
 - git
@@ -26,11 +25,13 @@
 ## Customization
 - change bindings in main.py
 - change colors in main.py
-
+## Current Layout
+![Current Layout](Layout.png)
 ## Roadmap
 - key.conf in seperate file
 - Mask for non "blinking" led upon pressed
 - cli options
+- Gui
 
 ## References
 https://cdn.inmusicbrands.com/akai/attachments/APC%20Key%2025%20mk2%20-%20Communication%20Protocol%20-%20v1.1.pdf
