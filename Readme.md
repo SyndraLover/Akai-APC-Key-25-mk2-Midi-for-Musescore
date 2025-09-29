@@ -1,23 +1,22 @@
 # APC Key 25 mk2 Midi>keypresses
-    - Designed for Musescore4
-    - Musescore3 only with jackctl for Midi assignment
+- Designed for Musescore4
+- Musescore3 only with jackctl for Midi assignment
 
 ## Dependencies
-    - wtype (wayland)
-    - xdotool (xorg)
-    - python3
-    - amidi
-    - git
+- wtype (wayland)
+- xdotool (xorg)
+- python3
+- amidi
+- git
 
 ## RUN
 1. install dependencies
 2. `git clone https://github.com/SyndraLover/Akai-APC-Key-25-mk2-Midi-for-Musescore.git`
-        - copy main.py
 3. `cd Akai-APC-Key-25-mk2-Midi-for-Musescore`
 4. `amidi -l`
     - Find IO  hw:x,y,z  APC Key 25 mk2 Control
     - change hw_midi=hw:x,y,z in main.py
-5. change key_func in main.py for your Desktop
+5. change key_func in main.py for your Desktop (wtype for Wayland/ xdotool for Xorg)
 6. `python main.py`
     - `python3 main.py`
     - `uv run main.py`
@@ -28,9 +27,9 @@
     - change colors in main.py
 
 ## Roadmap
-    - key.conf in seperate file
-    - Mask for non "blinking" led upon pressed
-    - cli options
+- key.conf in seperate file
+- Mask for non "blinking" led upon pressed
+- cli options
 
 ## References
-    - https://cdn.inmusicbrands.com/akai/attachments/APC%20Key%2025%20mk2%20-%20Communication%20Protocol%20-%20v1.1.pdf
+https://cdn.inmusicbrands.com/akai/attachments/APC%20Key%2025%20mk2%20-%20Communication%20Protocol%20-%20v1.1.pdf
