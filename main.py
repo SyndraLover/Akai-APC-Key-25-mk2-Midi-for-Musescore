@@ -11,7 +11,11 @@ hw_midi="hw:1,0,1"
 color={"lighter_blue":"03","light_red":"04","light_green":"10","turquiose":"20","light_blue":"24","neon_blue":"29","dunno":"30","pink":"34","pinker":"38","dark_blue":"43","red":"48","green":"56","whiteish":"69"}
 led_modes={"pulsing":"9a","blinking":"9e","low_light":"93","default":"96"}
 
-apc_array=["20","21","22","23","24","25","26","27","18","19","1a","1b","1c","1d","1e","1f","10","11","12","13","14","15","16","17","08","09","0a","0b","0c","0d","0e","0f","00","01","02","03","04","05","06","07"]
+apc_array=["20","21","22","23","24","25","26","27"]
+apc_array=apc_array+["18","19","1a","1b","1c","1d","1e","1f"]
+apc_array=apc_array+["10","11","12","13","14","15","16","17"]
+apc_array=apc_array+["08","09","0a","0b","0c","0d","0e","0f"]
+apc_array=apc_array+["00","01","02","03","04","05","06","07"]
 
 ############################################################################################################################# 8x5
 # CHANGE HERE
@@ -41,7 +45,9 @@ ui_func=["","","","","","","",""]#——Left>Right
 ui_func=ui_func+["","","","","",""]# | top>bottom
 ui_func=ui_func+["space",""]# Play/Pause REC
 
-
+#############
+# BLINK ON PRESS
+blink=["02"]
 
 
 
@@ -72,9 +78,13 @@ def change_led(inp):
     func=A[apc_array.index(cur_input)][3]
 
     if mode=="default":
-        subprocess.run(["amidi","--send-hex",str(led_modes["blinking"])+button+color[c],"-p",hw_midi])
-        mode="blinking"
-        subprocess.run(wayland_xorg(func))
+        if button in blink:
+            subprocess.run(["amidi","--send-hex",str(led_modes["blinking"])+button+color[c],"-p",hw_midi])
+            mode="blinking"
+            subprocess.run(wayland_xorg(func))
+        else:
+            subprocess.run(wayland_xorg(func))
+
 
     else:
         subprocess.run(["amidi","--send-hex",str(led_modes["default"])+button+color[c],"-p",hw_midi])
