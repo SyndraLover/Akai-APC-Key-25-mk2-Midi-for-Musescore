@@ -3,8 +3,8 @@ import time
 import sys
 import itertools
 
-key_func="wtype"
-#key_func="xdotool"
+#key_func="wtype"
+key_func="xdotool"
 
 hw_midi="hw:1,0,1"
 
@@ -19,18 +19,18 @@ apc_array=apc_array+["00","01","02","03","04","05","06","07"]
 
 ############################################################################################################################# 8x5
 # CHANGE HERE
-color_array=["dark_blue","light_blue","light_blue","light_blue","lighter_blue","lighter_blue","lighter_blue","pinker"]
-color_array=color_array+["dark_blue","light_blue","light_blue","light_blue","lighter_blue","lighter_blue","lighter_blue","pinker"]
-color_array=color_array+["dark_blue","light_blue","light_blue","light_blue","lighter_blue","lighter_blue","lighter_blue","pinker"]
-color_array=color_array+["dark_blue","light_blue","light_blue","light_blue","lighter_blue","lighter_blue","lighter_blue","pinker"]
-color_array=color_array+["light_green","red","light_blue","light_blue","lighter_blue","lighter_blue","lighter_blue","pinker"]
+color_array=["dark_blue","light_blue","light_blue","light_blue","lighter_blue","lighter_blue","lighter_blue","neon_blue"]
+color_array=color_array+["dark_blue","light_blue","light_blue","light_blue","lighter_blue","lighter_blue","lighter_blue","light_green"]
+color_array=color_array+["dark_blue","light_blue","light_blue","light_blue","lighter_blue","lighter_blue","lighter_blue","red"]
+color_array=color_array+["dark_blue","light_blue","light_blue","light_blue","lighter_blue","lighter_blue","lighter_blue","pink"]
+color_array=color_array+["light_green","red","light_blue","light_blue","lighter_blue","lighter_blue","lighter_blue","lighter_blue"]
 #############################################################################################################################
 # CHANGE HERE
-func_conf=["","","","","","","",""]
-func_conf=func_conf+["","","","","","","",""]
-func_conf=func_conf+["","","","","","","",""]
-func_conf=func_conf+["","","","","","","",""]
-func_conf=func_conf+["w","q","n","","","","",""]
+func_conf=["7","Shift+v","","","","","","Ctrl+Alt+1"]
+func_conf=func_conf+["6","Shift+o","","","","","","Ctrl+Alt+2"]
+func_conf=func_conf+["5","Shift+s","","","","","","Ctrl+Alt+3"]
+func_conf=func_conf+["4","Shift+n","m","","","","","Ctrl+Alt+4"]
+func_conf=func_conf+["w","q","n","Ctrl+x","x","","",""]
 ###########################################################################################################################
 
 # UI BUTTONS
@@ -41,13 +41,13 @@ ui_but=ui_but+["5b","5d"]#play rec
 
 #################################################
 # CHANGE HERE
-ui_func=["","","","","","","",""]#——Left>Right
+ui_func=["Alt+Up","Alt+Down","Ctrl+Left","Ctrl+Right","Left","Right","",""]#——Left>Right
 ui_func=ui_func+["","","","","",""]# | top>bottom
 ui_func=ui_func+["space",""]# Play/Pause REC
 
 #############
 # BLINK ON PRESS
-blink=["02"]
+blink=["02","27","1f","17","0f"]
 
 
 
