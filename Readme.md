@@ -10,15 +10,18 @@
     - git
 
 ## RUN
-    - install dependencies
-    - git clone repo / copy main.py
-    - cd repo
-    - amidi -l 
+    1. install dependencies
+    2. `git clone https://github.com/SyndraLover/Akai-APC-Key-25-mk2-Midi-for-Musescore.git`
+        - copy main.py
+    3 `cd Akai-APC-Key-25-mk2-Midi-for-Musescore`
+    4. `amidi -l`
         - Find IO  hw:x,y,z  APC Key 25 mk2 Control
         - change hw_midi=hw:x,y,z in main.py
-    - change key_func in main.py for your Desktop
-    - python main.py /python3 main.py / uv run main.py
-    - Launch Mscore4
+    5. change key_func in main.py for your Desktop
+    6. `python main.py`
+        - `python3 main.py`
+        - `uv run main.py`
+    7. Launch Musescore4
 
 ## Customization
     - change bindings in main.py
