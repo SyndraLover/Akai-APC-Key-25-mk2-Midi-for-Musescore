@@ -11,7 +11,9 @@
 
 ## RUN
     1. install dependencies
-    2. `git clone https://github.com/SyndraLover/Akai-APC-Key-25-mk2-Midi-for-Musescore.git`
+    2. ```
+        git clone https://github.com/SyndraLover/Akai-APC-Key-25-mk2-Midi-for-Musescore.git
+        ```
         - copy main.py
     3 `cd Akai-APC-Key-25-mk2-Midi-for-Musescore`
     4. `amidi -l`
