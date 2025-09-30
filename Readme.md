@@ -11,15 +11,29 @@
 
 ## RUN
 1. install dependencies
-2. `git clone https://github.com/SyndraLover/Akai-APC-Key-25-mk2-Midi-for-Musescore.git`
-3. `cd Akai-APC-Key-25-mk2-Midi-for-Musescore`
-4. `amidi -l`
-    - Find `IO  hw:x,y,z  APC Key 25 mk2 Control`
-    - change hw_midi=hw:x,y,z in main.py
+2. Run in terminal
+```
+    git clone https://github.com/SyndraLover/Akai-APC-Key-25-mk2-Midi-for-Musescore.git
+    cd Akai-APC-Key-25-mk2-Midi-for-Musescore
+```
+4. Run `amidi -l`
+- should Look like this
+```
+Dir Device    Name
+IO  hw:1,0,0  APC Key 25 mk2 Keys
+IO  hw:1,0,1  APC Key 25 mk2 Control
+IO  hw:1,0,2  APC Key 25 mk2 MIDI 3
+IO  hw:1,0,3  APC Key 25 mk2 MIDI 4
+```
+- Find `IO  hw:x,y,z  APC Key 25 mk2 Control`
+- change hw_midi=hw:x,y,z in main.py if necessary
 5. change key_func in main.py for your Desktop (wtype for Wayland/ xdotool for Xorg)
-6. `python main.py`
-    - `python3 main.py`
-    - `uv run main.py`
+6. Start daemon in terminal 
+``` 
+python main.py
+```
+- `python3 main.py`
+- `uv run main.py`
 7. Launch Musescore4
 8. import keybindings for xorg only.
 9. Enable midi Input in Musescore. Only enabling the first input of Akai APC Key 25.
