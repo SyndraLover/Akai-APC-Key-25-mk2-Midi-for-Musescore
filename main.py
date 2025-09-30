@@ -20,8 +20,8 @@ apc_array=apc_array+["00","01","02","03","04","05","06","07"]
 ############################################################################################################################# 8x5
 # CHANGE HERE
 color_array=["dark_blue","turquiose","light_blue","pinker","light_red","light_red","light_red","neon_blue"]
-color_array=color_array+["dark_blue","turquiose","light_blue","pinker","lighter_blue","lighter_blue","light_red","light_green"]
-color_array=color_array+["dark_blue","light_blue","light_blue","pinker","lighter_blue","lighter_blue","light_red","red"]
+color_array=color_array+["dark_blue","turquiose","lighter_blue","pinker","lighter_blue","lighter_blue","light_red","light_green"]
+color_array=color_array+["dark_blue","light_blue","lighter_blue","pinker","lighter_blue","lighter_blue","light_red","red"]
 color_array=color_array+["dark_blue","light_blue","light_blue","light_blue","lighter_blue","lighter_blue","light_red","pink"]
 color_array=color_array+["light_green","red","neon_blue","red","lighter_blue","lighter_blue","light_red","light_blue"]
 #############################################################################################################################
