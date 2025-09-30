@@ -5,7 +5,7 @@
 ## Dependencies
 - xdotool (Recommended) or wtype
 - python3
-- amidi
+- alsa-utils (amidi)
 - git
 
 ## RUN
@@ -34,4 +34,5 @@
 - Gui
 
 ## References
-https://cdn.inmusicbrands.com/akai/attachments/APC%20Key%2025%20mk2%20-%20Communication%20Protocol%20-%20v1.1.pdf
+- https://github.com/sickcodes/xdotool-gui/blob/master/key_list.csv
+- https://cdn.inmusicbrands.com/akai/attachments/APC%20Key%2025%20mk2%20-%20Communication%20Protocol%20-%20v1.1.pdf

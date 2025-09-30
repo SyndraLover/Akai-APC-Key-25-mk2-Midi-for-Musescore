@@ -3,8 +3,8 @@ import time
 import sys
 import itertools
 
-key_func="wtype"
-#key_func="xdotool"
+#key_func="wtype"
+key_func="xdotool"
 
 hw_midi="hw:1,0,1"
 
@@ -26,11 +26,11 @@ color_array=color_array+["dark_blue","light_blue","light_blue","light_blue","lig
 color_array=color_array+["light_green","red","neon_blue","red","lighter_blue","lighter_blue","light_red","light_blue"]
 #############################################################################################################################
 # CHANGE HERE
-func_conf=["7","","Shift+v","","Ctrl+9","Ctrl+7","Ctrl+6","Ctrl+Alt+1"]
-func_conf=func_conf+["6","","Shift+o","","","","Ctrl+5","Ctrl+Alt+2"]
-func_conf=func_conf+["5","","Shift+s","","","","Ctrl+4","Ctrl+Alt+3"]
-func_conf=func_conf+["4",".","Shift+n","m","","","Ctrl+3","Ctrl+Alt+4"]
-func_conf=func_conf+["w","q","n","Ctrl+x","Shift+t","Shift+s","Ctrl+2","x"]
+func_conf=["7","Shift+plus","Shift+v","Ctrl+d","Ctrl+9","Ctrl+7","Ctrl+6","Ctrl+Alt+1"]
+func_conf=func_conf+["6","Shift+minus","Shift+o","","8","Shift+8","Ctrl+5","Ctrl+Alt+2"]
+func_conf=func_conf+["5","Shift+period","Shift+s","","Shift+m","Ctrl+Shift+m","Ctrl+4","Ctrl+Alt+3"]
+func_conf=func_conf+["4","period","Shift+n","m","asterisk","Shift+asterisk","Ctrl+3","Ctrl+Alt+4"]
+func_conf=func_conf+["w","q","n","0","t","Shift+t","Ctrl+2","x"]
 ###########################################################################################################################
 
 # UI BUTTONS
@@ -41,15 +41,15 @@ ui_but=ui_but+["5b","5d"]#play rec
 
 #################################################
 # CHANGE HERE
-ui_func=["Alt+Up","Alt+Down","Ctrl+Left","Ctrl+Right","Left","Right","BackSpace","Del"]#——Left>Right
-ui_func=ui_func+["","","","Up","Down",""]# | top>bottom
+ui_func=["Alt+Up","Alt+Down","Ctrl+Left","Ctrl+Right","Left","Right","BackSpace","Ctrl+Shift+BackSpace"]#——Left>Right
+ui_func=ui_func+["plus","Shift+y","minus","Ctrl+Up","Ctrl+Down",""]# | top>bottom
 ui_func=ui_func+["space","n"]# Play/Pause REC
 
 #############
 # BLINK ON PRESS
 blink=["02","27","1f","17","0f"]
 
-
+dynamic="23"
 
 #################################################
 A=list(zip(itertools.repeat("default"),apc_array,color_array,func_conf))#[LED_Mode,Button,colors,functions]
