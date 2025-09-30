@@ -3,8 +3,8 @@ import time
 import sys
 import itertools
 
-#key_func="wtype"
-key_func="xdotool"
+key_func="wtype"
+#key_func="xdotool"
 
 hw_midi="hw:1,0,1"
 
@@ -19,18 +19,18 @@ apc_array=apc_array+["00","01","02","03","04","05","06","07"]
 
 ############################################################################################################################# 8x5
 # CHANGE HERE
-color_array=["dark_blue","light_blue","light_blue","light_blue","lighter_blue","lighter_blue","lighter_blue","neon_blue"]
-color_array=color_array+["dark_blue","light_blue","light_blue","light_blue","lighter_blue","lighter_blue","lighter_blue","light_green"]
-color_array=color_array+["dark_blue","light_blue","light_blue","light_blue","lighter_blue","lighter_blue","lighter_blue","red"]
-color_array=color_array+["dark_blue","light_blue","light_blue","light_blue","lighter_blue","lighter_blue","lighter_blue","pink"]
-color_array=color_array+["light_green","red","light_blue","light_blue","lighter_blue","lighter_blue","lighter_blue","lighter_blue"]
+color_array=["dark_blue","turquiose","light_blue","pinker","light_red","light_red","light_red","neon_blue"]
+color_array=color_array+["dark_blue","turquiose","light_blue","pinker","lighter_blue","lighter_blue","light_red","light_green"]
+color_array=color_array+["dark_blue","light_blue","light_blue","pinker","lighter_blue","lighter_blue","light_red","red"]
+color_array=color_array+["dark_blue","light_blue","light_blue","light_blue","lighter_blue","lighter_blue","light_red","pink"]
+color_array=color_array+["light_green","red","neon_blue","red","lighter_blue","lighter_blue","light_red","light_blue"]
 #############################################################################################################################
 # CHANGE HERE
-func_conf=["7","Shift+v","","","","","","Ctrl+Alt+1"]
-func_conf=func_conf+["6","Shift+o","","","","","","Ctrl+Alt+2"]
-func_conf=func_conf+["5","Shift+s","","","","","","Ctrl+Alt+3"]
-func_conf=func_conf+["4","Shift+n","m","","","","","Ctrl+Alt+4"]
-func_conf=func_conf+["w","q","n","Ctrl+x","x","","",""]
+func_conf=["7","","Shift+v","","Ctrl+9","Ctrl+7","Ctrl+6","Ctrl+Alt+1"]
+func_conf=func_conf+["6","","Shift+o","","","","Ctrl+5","Ctrl+Alt+2"]
+func_conf=func_conf+["5","","Shift+s","","","","Ctrl+4","Ctrl+Alt+3"]
+func_conf=func_conf+["4",".","Shift+n","m","","","Ctrl+3","Ctrl+Alt+4"]
+func_conf=func_conf+["w","q","n","Ctrl+x","Shift+t","Shift+s","Ctrl+2","x"]
 ###########################################################################################################################
 
 # UI BUTTONS
@@ -41,9 +41,9 @@ ui_but=ui_but+["5b","5d"]#play rec
 
 #################################################
 # CHANGE HERE
-ui_func=["Alt+Up","Alt+Down","Ctrl+Left","Ctrl+Right","Left","Right","",""]#——Left>Right
-ui_func=ui_func+["","","","","",""]# | top>bottom
-ui_func=ui_func+["space",""]# Play/Pause REC
+ui_func=["Alt+Up","Alt+Down","Ctrl+Left","Ctrl+Right","Left","Right","BackSpace","Del"]#——Left>Right
+ui_func=ui_func+["","","","Up","Down",""]# | top>bottom
+ui_func=ui_func+["space","n"]# Play/Pause REC
 
 #############
 # BLINK ON PRESS
@@ -70,28 +70,19 @@ def init():# A[led,button,color]
         subprocess.run(["amidi","--send-hex","96"+str(_)+"45","-p",hw_midi])
 
 
-def change_led(inp):
+def change_led(inp,key=True,set_mode="default"):
 
     mode=A[apc_array.index(cur_input)][0]
     button=A[apc_array.index(cur_input)][1]
     c=A[apc_array.index(cur_input)][2]
     func=A[apc_array.index(cur_input)][3]
-
-    if mode=="default":
-        if button in blink:
-            subprocess.run(["amidi","--send-hex",str(led_modes["blinking"])+button+color[c],"-p",hw_midi])
-            mode="blinking"
-            subprocess.run(wayland_xorg(func))
-        else:
-            subprocess.run(wayland_xorg(func))
-
-
-    else:
+    if mode=="blinking":
         subprocess.run(["amidi","--send-hex",str(led_modes["default"])+button+color[c],"-p",hw_midi])
         mode="default"
-#        new=[key_func,func]
-#        subprocess.run(new)
- 
+    else:
+        subprocess.run(["amidi","--send-hex",str(led_modes[set_mode])+button+color[c],"-p",hw_midi])
+        mode=set_mode
+    if key:
         subprocess.run(wayland_xorg(func))
     return [mode,button,c,func]
        
@@ -114,5 +105,13 @@ with open("test.log", "w") as f:
             else:
                 cur_input=str(cur).split(" ")[1].lower()
 
-                A[apc_array.index(cur_input)]=change_led(cur_input)
+                #if cur_input in ["27","1f","17","0f"]:
+                #    for _ in ["27","1f","17","0f"]:
+                #        A[apc_array.index(_)]=change_led(_,key=False,set_mode="default")
+                #
+                if cur_input in blink:
+                    A[apc_array.index(cur_input)]=change_led(cur_input,set_mode="blinking")
+                else:
+                    A[apc_array.index(cur_input)]=change_led(cur_input)
+
                 subprocess.run(["echo",str(A[apc_array.index(cur_input)])])
