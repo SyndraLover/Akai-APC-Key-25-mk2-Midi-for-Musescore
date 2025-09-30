@@ -26,10 +26,10 @@ color_array=color_array+["dark_blue","light_blue","light_blue","light_blue","lig
 color_array=color_array+["light_green","red","neon_blue","red","lighter_blue","lighter_blue","light_red","light_blue"]
 #############################################################################################################################
 # CHANGE HERE
-func_conf=["7","Shift+plus","Shift+v","Ctrl+d","Ctrl+9","Ctrl+7","Ctrl+6","Ctrl+Alt+1"]
-func_conf=func_conf+["6","Shift+minus","Shift+o","","8","Shift+8","Ctrl+5","Ctrl+Alt+2"]
-func_conf=func_conf+["5","Shift+period","Shift+s","","Shift+m","Ctrl+Shift+m","Ctrl+4","Ctrl+Alt+3"]
-func_conf=func_conf+["4","period","Shift+n","m","asterisk","Shift+asterisk","Ctrl+3","Ctrl+Alt+4"]
+func_conf=["7","Alt+period","Shift+v","Ctrl+d","Ctrl+9","Ctrl+7","Ctrl+6","Ctrl+Alt+1"]
+func_conf=func_conf+["6","Alt+minus","Shift+o","","Shift+b","Ctrl+Shift+b","Ctrl+5","Ctrl+Alt+2"]
+func_conf=func_conf+["5","Ctrl+period","Shift+s","","Ctrl+m","Ctrl+Shift+m","Ctrl+4","Ctrl+Alt+3"]
+func_conf=func_conf+["4","period","Shift+n","m","asterisk","slash","Ctrl+3","Ctrl+Alt+4"]
 func_conf=func_conf+["w","q","n","0","t","Shift+t","Ctrl+2","x"]
 ###########################################################################################################################
 
@@ -42,7 +42,7 @@ ui_but=ui_but+["5b","5d"]#play rec
 #################################################
 # CHANGE HERE
 ui_func=["Alt+Up","Alt+Down","Ctrl+Left","Ctrl+Right","Left","Right","BackSpace","Ctrl+Shift+BackSpace"]#——Left>Right
-ui_func=ui_func+["plus","Shift+y","minus","Ctrl+Up","Ctrl+Down",""]# | top>bottom
+ui_func=ui_func+["plus","equal","minus","Ctrl+Up","Ctrl+Down",""]# | top>bottom
 ui_func=ui_func+["space","n"]# Play/Pause REC
 
 #############
