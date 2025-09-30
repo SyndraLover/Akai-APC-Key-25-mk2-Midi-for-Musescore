@@ -1,6 +1,7 @@
 # APC Key 25 mk2 Midi>keypresses
 - Designed for Musescore4
 - Musescore3 only with jackctl for Midi assignment
+- Tested on Debian13
 
 ## Dependencies
 - xdotool (Recommended) or wtype
@@ -20,7 +21,9 @@
     - `python3 main.py`
     - `uv run main.py`
 7. Launch Musescore4
-8. Enable midi Input and change keybindings to mapped keys in main.py
+8. import keybindings for xorg only.
+9. Enable midi Input in Musescore. Only enabling the first input of Akai APC Key 25.
+10. Focus Musescore Window and everything should work. You can see inputs in terminal for debug
 
 ## Customization
 - change bindings in main.py
@@ -28,9 +31,10 @@
 ## Current Layout
 ![Current Layout](Layout.png)
 ## Roadmap
+- dynamic button that works without keyboard and mouse
+- Voices Exclusively blink: if one is blinking every other should not
 - key.conf in seperate file
-- Mask for non "blinking" led upon pressed
-- cli options
+- cli options (-d debugging -c config.file)
 - Gui
 
 ## References
