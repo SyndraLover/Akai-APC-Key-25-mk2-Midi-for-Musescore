@@ -28,6 +28,7 @@
 ## Customization
 - change bindings in main.py
 - change colors in main.py
+
 ## Current Layout
 ![Current Layout](Layout.png)
 ## Roadmap
